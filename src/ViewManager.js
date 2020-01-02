@@ -1,13 +1,26 @@
 import Service from './Service';
+import Post from './Post';
 
 class ViewManager {
     constructor() {
-        console.log('View manager');
-        this.name = 'view manager';
+        this.app = document.querySelector('#app');
+        this.container = document.createElement('div');
+        this.container.className = 'container';
     }
 
     init() {
-        console.log('View manager init');
+        Service.getList().then(response => {
+            
+            const list = response.posts.map(props => {
+                return new Post(props).render();
+            });
+
+            console.log(list);
+
+            this.container.append(...list);
+
+            this.app.appendChild(this.container);
+        });
     }
 }
 

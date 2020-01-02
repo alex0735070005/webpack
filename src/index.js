@@ -1,5 +1,3 @@
 import ViewManager from './ViewManager';
 
-
-
-Service.getList();
+ViewManager.init();
