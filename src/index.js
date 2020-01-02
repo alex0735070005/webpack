@@ -1,3 +1,5 @@
-const addUser = require('./user');
-console.log('Hello world dasdasd dsadsadasd sadadsada');
-addUser();
+import ViewManager from './ViewManager';
+
+
+
+Service.getList();
